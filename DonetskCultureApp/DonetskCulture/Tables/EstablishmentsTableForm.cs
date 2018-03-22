@@ -15,7 +15,7 @@ namespace DonetskCulture
     public partial class EstablishmentsTableForm : Form
     {
         //Fields
-        MySqlConnection connection;//= Connection.GetConnection;
+        MySqlConnection connection;//= Connection.GetConnection; //Избыточное
         Command controlCommand = new Command();
 
 
@@ -24,7 +24,7 @@ namespace DonetskCulture
         public EstablishmentsTableForm(MySqlConnection connect)
         {
             InitializeComponent();
-            connection = connect;
+            connection = connect; //Избыточное
             //TryConnectDB();
         }
 
@@ -41,28 +41,6 @@ namespace DonetskCulture
         }
 
         //Users Generated Methods
-
-        //private void ShowDatabase()
-        //{
-        //    try
-        //    {
-        //        MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM donetsk_culture_db.establishments", connection);
-        //        //connection.Open();
-        //        DataSet ds = new DataSet();
-        //        adapter.Fill(ds, "establishments");
-        //        dataGridView1.DataSource = ds.Tables["establishments"];
-        //        connection.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        private void ShowTable() {
-
-
-        }
 
 
         //DataTable table = connection.FillDataGridView(dataGridView1, 20, query: query); //заполняем таблицу данными с запроса и настраиваем
