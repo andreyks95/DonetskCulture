@@ -7,7 +7,6 @@ using MySql.Data.Entity;
 using MySql.Data;
 using System.Data.Common;
 using System.Data.Entity;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace DonetskCulture
