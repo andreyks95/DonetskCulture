@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("DonetskCultureApp")]
+[assembly: AssemblyTitle("DonetskCulture")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DonetskCultureApp")]
+[assembly: AssemblyProduct("DonetskCulture")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("77c88721-7e4b-47aa-8ce3-2617d4d1d2fb")]
+[assembly: Guid("a4c59141-bfa7-46e0-bb31-431d28f4f7b0")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //
