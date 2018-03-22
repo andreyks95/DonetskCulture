@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DonetskCulture.Control;
 using MySql.Data.MySqlClient;
 
 namespace DonetskCulture
@@ -14,14 +15,16 @@ namespace DonetskCulture
     public partial class EstablishmentsTableForm : Form
     {
         //Fields
-        MySqlConnection connection;
+        MySqlConnection connection;//= Connection.GetConnection;
+        Command controlCommand = new Command();
+
+
 
         //Constructors
-        public EstablishmentsTableForm()
+        public EstablishmentsTableForm(MySqlConnection connect)
         {
             InitializeComponent();
-            //ConnectToMySQLDatabase();
-            //MessageBox.Show("");
+            connection = connect;
             //TryConnectDB();
         }
 
@@ -32,52 +35,38 @@ namespace DonetskCulture
 
         private void EstablishmentsTableForm_Load(object sender, EventArgs e)
         {
-            ShowDatabase();
+            //ShowDatabase();
+            string query = "SELECT * FROM donetsk_culture_db.establishments";
+            controlCommand.FillDataGridView(dataGridView1, query);
         }
 
         //Users Generated Methods
 
-        private void ConnectToMySQLDatabase() {
-            try
-            {
-                connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
-                //connection.Open();
-                if (connection.State == ConnectionState.Open)
-                {
-                    MessageBox.Show("Open connection!");
-                }
-                else
-                {
-                    MessageBox.Show("Closed connection!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        //private void ShowDatabase()
+        //{
+        //    try
+        //    {
+        //        MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM donetsk_culture_db.establishments", connection);
+        //        //connection.Open();
+        //        DataSet ds = new DataSet();
+        //        adapter.Fill(ds, "establishments");
+        //        dataGridView1.DataSource = ds.Tables["establishments"];
+        //        connection.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
+        private void ShowTable() {
 
 
         }
 
 
-        private void ShowDatabase()
-        {
-            try
-            {
-                MySqlConnection connection =  new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM donetsk_culture_db.establishments", connection);
-                connection.Open();
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "establishments");
-                dataGridView1.DataSource = ds.Tables["establishments"];
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //DataTable table = connection.FillDataGridView(dataGridView1, 20, query: query); //заполняем таблицу данными с запроса и настраиваем
+        //managerBase = this.BindingContext[table]; //подключаем таблицу для передвижения по ней
 
 
         /*
