@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DonetskCulture.Tables
 {
-    public partial class Collectives : Form
+    public partial class CollectivesTableForm : Form
     {
-        public Collectives()
+        public CollectivesTableForm()
         {
             InitializeComponent();
         }
