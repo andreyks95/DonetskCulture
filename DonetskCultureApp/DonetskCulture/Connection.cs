@@ -45,8 +45,16 @@ namespace DonetskCulture
             }
         }
 
-        public static void OpenConnection() => connection.Open();
-        public static void CloseConnection() => connection.Close();
+        public static void OpenConnection()
+        {
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+        }
+        public static void CloseConnection()
+        {
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
+        }
 
         public static MySqlConnection GetConnection => connection;
 
