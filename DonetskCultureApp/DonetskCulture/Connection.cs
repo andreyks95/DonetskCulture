@@ -9,20 +9,23 @@ using System.Data;
 
 namespace DonetskCulture
 {
-    class Connection
+    static class Connection
     {
-        private readonly MySqlConnection connection;
+        private static MySqlConnection connection;
 
-        public Connection()
-        {
-            connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
-            OpenConnection();
-            TryConnectMySQL();
-        }
+        //private static void GetConnection()
+        //{
+        //    connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
+        //    OpenConnection();
+        //    TryConnectMySQL();
+        //}
 
-        private void TryConnectMySQL()
+        public static void TryConnectMySQL()
         {
             bool IsOpen = false;
+
+            connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
+            OpenConnection();
 
             try
             {
@@ -42,8 +45,10 @@ namespace DonetskCulture
             }
         }
 
-        public void OpenConnection() => connection.Open();
-        public void CloseConnection() => connection.Close();
+        public static void OpenConnection() => connection.Open();
+        public static void CloseConnection() => connection.Close();
+
+        public static MySqlConnection GetConnection => connection;
 
 
     }
