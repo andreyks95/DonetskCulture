@@ -22,15 +22,18 @@ namespace DonetskCulture
 
         private void TryConnectMySQL()
         {
+            bool IsOpen = false;
+
             try
             {
                 if (connection.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("Open connection!");
+                    IsOpen = true;
+                    //MessageBox.Show("Open connection!");
                 }
                 else
                 {
-                    MessageBox.Show("Fault connection!");
+                    //MessageBox.Show("Fault connection!");
                 }
             }
             catch (Exception ex)
@@ -39,8 +42,8 @@ namespace DonetskCulture
             }
         }
 
-        private void OpenConnection() => connection.Open();
-        private void CloseConnection() => connection.Close();
+        public void OpenConnection() => connection.Open();
+        public void CloseConnection() => connection.Close();
 
 
     }
