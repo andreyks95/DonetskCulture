@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
-namespace DonetskCultureApp
+namespace DonetskCulture
 {
     static class Program
     {
@@ -14,9 +15,18 @@ namespace DonetskCultureApp
         [STAThread]
         static void Main()
         {
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //Создаём подкючение к БД
+            //Connection connection = new Connection();
+            Connection.TryConnectMySQL();
+            MySqlConnection connection = Connection.GetConnection;
+
+            //Запускаем форму
+            Application.Run(new EstablishmentsTableForm(connection));
         }
     }
 }

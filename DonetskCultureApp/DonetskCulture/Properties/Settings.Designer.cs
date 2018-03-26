@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DonetskCultureApp.Properties
+namespace DonetskCulture.Properties
 {
 
 

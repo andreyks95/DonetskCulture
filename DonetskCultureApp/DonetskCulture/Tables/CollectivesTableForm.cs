@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DonetskCultureApp
+namespace DonetskCulture.Tables
 {
-    public partial class Form1 : Form
+    public partial class CollectivesTableForm : Form
     {
-        public Form1()
+        public CollectivesTableForm()
         {
             InitializeComponent();
         }
