@@ -11,7 +11,7 @@ namespace DonetskCulture
 {
     static class Connection
     {
-        private static MySqlConnection connection;
+        private static MySqlConnection connection; //соединение
 
         //private static void GetConnection()
         //{
@@ -20,6 +20,7 @@ namespace DonetskCulture
         //    TryConnectMySQL();
         //}
 
+        //Попытаться подкючиться к БД
         public static void TryConnectMySQL()
         {
             bool IsOpen = false;
@@ -45,17 +46,27 @@ namespace DonetskCulture
             }
         }
 
+        /// <summary>
+        /// Метод для открытия соединения с БД
+        /// </summary>
         public static void OpenConnection()
         {
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
         }
+
+        /// <summary>
+        /// Метод для закрытия соединения с БД
+        /// </summary>
         public static void CloseConnection()
         {
             if (connection.State == ConnectionState.Open)
                 connection.Close();
         }
 
+        /// <summary>
+        /// Получить текущее соединение 
+        /// </summary>
         public static MySqlConnection GetConnection => connection;
 
 
