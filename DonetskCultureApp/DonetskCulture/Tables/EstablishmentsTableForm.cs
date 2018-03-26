@@ -40,12 +40,57 @@ namespace DonetskCulture
             controlCommand.FillDataGridView(dataGridView1, query);
         }
 
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            IDTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            nameTextBox.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            regionOrCityTextBox.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            addressTextBox.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            formWorkComboBox.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+
+        }
+
+
         //Users Generated Methods
 
+        //Test Methods
+        public void ExecuteMyQuery(string query)
+        {
+            try
+            {
+                Connection.OpenConnection();
+                MySqlCommand command = new MySqlCommand(query, Connection.GetConnection);
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Query executed");
+                }
+                else
+                {
+                    MessageBox.Show("Query not executed");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString() + String.Empty + ex.InnerException.ToString());
+            }
+            finally
+            {
+                Connection.CloseConnection();
+            }
+
+        }
 
         //DataTable table = connection.FillDataGridView(dataGridView1, 20, query: query); //заполняем таблицу данными с запроса и настраиваем
         //managerBase = this.BindingContext[table]; //подключаем таблицу для передвижения по ней
 
+
+        //public void AddParametersString(MySqlCommand command, string[] variables, MySqlDbType[] mySqlDbTypes, string[] values)
+        //{
+        //    int i = 0, j = 0;
+        //    foreach (string val in values)
+        //        command.Parameters.Add(variables[i++], mySqlDbTypes[j++]).Value = val;
+        //    //command.Parameters.AddWithValue(variables[i++],val);
+        //}
 
         /*
         void TryConnectDB()
