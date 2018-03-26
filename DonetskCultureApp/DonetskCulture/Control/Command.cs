@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace DonetskCulture.Control
 {
+    /// <summary>
+    /// Класс предназначен для управления командами (обращение) к БД, вывод данных на экран 
+    /// </summary>
     class Command
     {
         //Fields
