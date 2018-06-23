@@ -43,7 +43,7 @@ namespace DonetskCulture.Tables.AddRecordsTables
         {
             //Вытаскиваем данные во время ввода
             string idText = IDTextBox.Text;
-            string name = nameTextBox.Text;
+            string name =   nameTextBox.Text;
             string form = formTextBox.Text;
             string genre = genreTextBox.Text;
             string ageCategory = ageCategoryComboBox.SelectedItem?.ToString(); //Если что-то есть в выбранном пункте, то конвертируем
@@ -77,7 +77,7 @@ namespace DonetskCulture.Tables.AddRecordsTables
         //Очистка формы
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            interactingWithForms.ClearForm(new [] { ageCategoryComboBox, rankComboBox, managerComboBox }, new [] { IDTextBox, nameTextBox, formTextBox, genreTextBox });
         }
 
     }
