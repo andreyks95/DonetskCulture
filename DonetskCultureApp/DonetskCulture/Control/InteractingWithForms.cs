@@ -30,5 +30,20 @@ namespace DonetskCulture.Control
             }
             return result;
         }
+
+        //Очистка формы от записей
+        public void ClearForm(ComboBox[] comboBoxes = null, TextBox[] textBoxes = null)
+        {
+            if (comboBoxes != null)
+            {
+                foreach (var item in comboBoxes)
+                    item.Text = "";
+            }
+            if (textBoxes != null)
+            {
+                foreach (var item in textBoxes)
+                    item.Text = "";
+            }
+        }
     }
 }
