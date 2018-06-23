@@ -25,11 +25,18 @@ namespace DonetskCulture
         {
             bool IsOpen = false;
 
-            connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line");
-            OpenConnection();
+            //connection = new MySqlConnection("datasource=localhost; port=3306; username=root; password=KZ-_-S_D48Line; " +
+            //    "tablecache = true;");
+            connection = new MySqlConnection("Server=192.168.0.109; Port=3306; Database=donetsk_culture; Uid=root; Pwd=KZ-_-S_D48Line; tablecache = true;");
+            //tablecache=true; DefaultTableCacheAge=30;   //Для кэширования таблицы
+            //'table cache = true'
+            //UseCompression=True;                        //Сжатие Compress network communication between client and server
+            //Ignore Prepare=true; IgnorePrepare=true;    //Игнорирования Enable server-side prepapared statements (they are disabled by default) by
+            //passing in "IgnorePrepare=false" to your connection string    
 
             try
             {
+                OpenConnection();
                 if (connection.State == ConnectionState.Open)
                 {
                     IsOpen = true;
