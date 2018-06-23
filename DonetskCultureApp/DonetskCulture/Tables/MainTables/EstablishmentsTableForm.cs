@@ -161,9 +161,9 @@ namespace DonetskCulture
             string collective = collectiveOfEstablishmentComboBox.SelectedItem?.ToString();
             string heads = managerOfEstablishmentComboBox.SelectedItem?.ToString();
             if (!String.IsNullOrEmpty(collective) && !String.IsNullOrWhiteSpace(collective))
-                collective = ParseForGetID(collective);
+                collective = interactingWithForms.ParseForGetID(collective);
             if (!String.IsNullOrEmpty(heads) && !String.IsNullOrWhiteSpace(heads))
-                heads = ParseForGetID(heads);
+                heads = interactingWithForms.ParseForGetID(heads);
 
             //Полученные значения с формы
             return new string[] { idText, name, region, address, formWork, function, collective, heads };
@@ -298,18 +298,7 @@ namespace DonetskCulture
 
         #endregion
 
-        //Парсим строку для получения ид
-        private string ParseForGetID(string rawString)
-        {
-            string result = null;
-            foreach (char symbol in rawString)
-            {
-                if (char.IsDigit(symbol))
-                    result += symbol;
-                else break;
-            }
-            return result;
-        }
+
 
 
 
