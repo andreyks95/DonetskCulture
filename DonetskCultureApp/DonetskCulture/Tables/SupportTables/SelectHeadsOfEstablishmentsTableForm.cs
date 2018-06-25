@@ -1,4 +1,5 @@
 ﻿using DonetskCulture.Control;
+using DonetskCulture.Tables.AddRecordsTables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,8 +21,18 @@ namespace DonetskCulture.Tables
         string valueSelectedEstablishment = "";
 
         //Дописать запросы
-        string partQueryBeforeWhere;
-        string partQueryAfterWhere;
+        string partQueryBeforeWhere = " select heads_establishments.id_head AS 'ID керівника', " +
+                                      " heads_establishments.fullName AS 'ПІБ керівника', " +
+                                      " heads_establishments.adminCorps AS 'Адміністративний корпус', " +
+                                      " heads_establishments.phone AS 'Телефон', " +
+                                      " heads_establishments.email AS 'E-mail' " +
+                                      " from donetsk_culture.heads_establishments, donetsk_culture.establishments " +
+                                      " WHERE heads_establishments.id_head = establishments.id_head AND establishments.name = ";
+        string partQueryAfterWhere = "AND CONCAT(" +
+            " COALESCE(heads_establishments.id_head ,''), ' ', COALESCE(heads_establishments.fullName,''), ' ', " +
+            " COALESCE(heads_establishments.adminCorps,''), ' ', COALESCE(heads_establishments.phone ,''), ' ', " +
+            " COALESCE(heads_establishments.email ,''), ' ') " +
+            " group by heads_establishments.id_head, heads_establishments.fullName ";
 
         BindingManagerBase bindingManagerBase;
         DataTable table;
@@ -47,7 +58,8 @@ namespace DonetskCulture.Tables
 
         private void AddHeadsOfEstablishmentButton_Click(object sender, EventArgs e)
         {
-            //Передать конструктору ссылку на класс Command();
+            AddHeadEstablishmentForm addHeadEstablishment = new AddHeadEstablishmentForm(controlCommand);
+            addHeadEstablishment.Show();
         }
     }
 }

@@ -73,6 +73,7 @@
             this.ClientSize = new System.Drawing.Size(800, 466);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "SelectHeadsOfEstablishmentsTableForm";
             this.Text = "SelectHeadsOfEstablishmentsTableForm";
             this.Load += new System.EventHandler(this.SelectHeadsOfEstablishmentsTableForm_Load);
