@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DonetskCulture.Control;
 using MySql.Data.MySqlClient;
+using DonetskCulture.Tables;
 
 namespace DonetskCulture
 {
@@ -385,7 +386,17 @@ namespace DonetskCulture
 
         private void ShowHeads_Button_Click(object sender, EventArgs e)
         {
+            string valueNameEstablishmentColumn = dataGridView1.CurrentRow.Cells[1].Value?.ToString();
 
+            if (!String.IsNullOrEmpty(valueNameEstablishmentColumn) && !String.IsNullOrWhiteSpace(valueNameEstablishmentColumn))
+            {
+                SelectHeadsOfEstablishmentsTableForm selectedHeads = new SelectHeadsOfEstablishmentsTableForm(valueNameEstablishmentColumn);
+                selectedHeads.Show();
+            }
+            else
+            {
+                MessageBox.Show("Увага!!! \n Виберіть заклад культури в таблиці! ");
+            }
         }
 
         #endregion
