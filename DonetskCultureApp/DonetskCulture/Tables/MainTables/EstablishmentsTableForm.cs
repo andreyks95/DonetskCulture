@@ -401,5 +401,10 @@ namespace DonetskCulture
 
         #endregion
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            interactingWithForms.ClearForm(new[] {formWorkComboBox, collectiveOfEstablishmentComboBox, managerOfEstablishmentComboBox }, 
+                new[] { IDTextBox, nameTextBox, regionOrCityTextBox, addressTextBox, });
+        }
     }
 }
