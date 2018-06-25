@@ -67,7 +67,7 @@ namespace DonetskCulture
 
         private void AddCollectiveButton_Click(object sender, EventArgs e)
         {
-            AddCollectiveForm addCollective = new AddCollectiveForm();
+            AddCollectiveForm addCollective = new AddCollectiveForm(controlCommand);
             addCollective.Show();
         }
     }
