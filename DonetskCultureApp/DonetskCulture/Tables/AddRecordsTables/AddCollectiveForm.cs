@@ -14,7 +14,7 @@ namespace DonetskCulture.Tables.AddRecordsTables
     public partial class AddCollectiveForm : Form
     {
 
-        Command controlCommand = new Command();
+        Command controlCommand; // = new Command();
 
         //Класс для взаимодействия с классами
         InteractingWithForms interactingWithForms = new InteractingWithForms();
@@ -25,6 +25,11 @@ namespace DonetskCulture.Tables.AddRecordsTables
         public AddCollectiveForm()
         {
             InitializeComponent();
+        }
+
+        public AddCollectiveForm(Command command):this()
+        {
+            controlCommand = command;
         }
 
         private void managerComboBox_Enter(object sender, EventArgs e)
