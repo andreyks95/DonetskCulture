@@ -26,7 +26,10 @@ namespace DonetskCulture
             MySqlConnection connection = Connection.GetConnection;
 
             //Запускаем форму
-            Application.Run(new EstablishmentsTableForm(connection));
+            //Old Version
+            //Application.Run(new EstablishmentsTableForm(connection));
+
+            Application.Run(new ControlForm(connection));
         }
     }
 }
