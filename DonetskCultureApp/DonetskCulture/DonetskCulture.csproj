@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Command.cs" />
     <Compile Include="Control\Connection.cs" />
     <Compile Include="Control\InteractingWithForms.cs" />
@@ -121,6 +127,9 @@
       <DependentUpon>SelectManagersOfCollectiveTableForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestFiles\TestEntity.cs" />
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tables\AddRecordsTables\AddCollectiveForm.resx">
       <DependentUpon>AddCollectiveForm.cs</DependentUpon>
     </EmbeddedResource>
