@@ -76,6 +76,12 @@
     <Compile Include="Tables\AddRecordsTables\AddCollectiveForm.Designer.cs">
       <DependentUpon>AddCollectiveForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.Designer.cs">
+      <DependentUpon>AddHeadEstablishmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tables\AddRecordsTables\AddManagerCollectiveForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="TestFiles\TestEntity.cs" />
     <EmbeddedResource Include="Tables\AddRecordsTables\AddCollectiveForm.resx">
       <DependentUpon>AddCollectiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.resx">
+      <DependentUpon>AddHeadEstablishmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tables\AddRecordsTables\AddManagerCollectiveForm.resx">
       <DependentUpon>AddManagerCollectiveForm.cs</DependentUpon>
