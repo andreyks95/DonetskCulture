@@ -29,10 +29,23 @@ namespace DonetskCulture.Tables
                             " from donetsk_culture.collectives GROUP BY(name); ";
 
         //часть запроса для поиска с учётом группировки
-        string partSelectSearchQueryWithGroup = "";
+        string partSelectSearchQueryWithGroup = " SELECT collectives.id_collective AS 'ID колективу', collectives.name AS 'Назва', collectives.form AS 'Форма', " +
+                                                " collectives.genre AS 'Жанр', collectives.ageCategory AS 'Вікова категорія', collectives.rank AS 'Звання' " +
+                                                " FROM donetsk_culture.collectives " +
+                                                " WHERE lower(CONCAT(COALESCE(collectives.id_collective,''), ' ', " +
+                                                " COALESCE(collectives.name,''), ' ', COALESCE(collectives.form,''), ' ', " +
+                                                " COALESCE(collectives.genre,''), ' ', COALESCE(collectives.ageCategory,''), ' ', " +
+                                                " COALESCE(collectives.rank,''), ' ' )) like ";
 
         //часть запроса для поиска 
-        string partSelectSearchQuery = "";
+        string partSelectSearchQuery = " SELECT collectives.id_collective AS 'ID колективу', collectives.name AS 'Назва', collectives.form AS 'Форма', " +
+                                       " collectives.genre AS 'Жанр', collectives.ageCategory AS 'Вікова категорія', collectives.rank AS 'Звання', " +
+                                       " managers_collectives.fullName AS 'ПІБ керівника' " +
+                                       " FROM(donetsk_culture.collectives LEFT JOIN donetsk_culture.managers_collectives ON collectives.id_manager = managers_collectives.id_manager) " +
+                                       " WHERE lower(CONCAT(COALESCE(collectives.id_collective,''), ' ',  " +
+                                       " COALESCE(collectives.name,''), ' ', COALESCE(collectives.form,''), ' ', " +
+                                       " COALESCE(collectives.genre,''), ' ', COALESCE(collectives.ageCategory,''), ' ', " +
+                                       " COALESCE(collectives.rank,''), ' ', COALESCE(managers_collectives.fullName,''), ' ')) like ";
 
 
         string[] parametersTableSQL = new string[] { "@id_collective", "@name", "@form", "@genre", "@ageCategory", "@rank", "@id_manager" };
@@ -59,8 +72,6 @@ namespace DonetskCulture.Tables
             table = controlCommand.FillDataGridView(dataGridView1, otherQuery);
             bindingManagerBase = this.BindingContext[table];
         }
-
-        //ИСПРАВИТЬ ЭТОТ МЕТОД
 
         //Получаем данные с DataGridView и заполняем поля
         private void GetDataDataGrid()
@@ -127,11 +138,10 @@ namespace DonetskCulture.Tables
         //Заполняем ComboBox для отображения руководителей
         private void managerComboBox_Enter(object sender, EventArgs e)
         {
-            string query = " SELECT CONCAT(COALESCE(managers_collectives.id_manager, ''), ' ', COALESCE(managers_collectives.fullName, ''), ' ', " +
-                            " COALESCE(managers_collectives.rankManager, ''), ' ', COALESCE(managers_collectives.education, ''), ' ', " +
-                            " COALESCE(managers_collectives.experience, ''), ' ', COALESCE(managers_collectives.phone, ''), ' ', " +
-                            " COALESCE(managers_collectives.email, ''), ' ') AS 'Result' " +
-                            " From donetsk_culture.managers_collectives; ";
+            string query = " SELECT collectives.id_collective AS 'ID колективу', collectives.name AS 'Назва', collectives.form AS 'Форма', " +
+                                       " collectives.genre AS 'Жанр', collectives.ageCategory AS 'Вікова категорія', collectives.rank AS 'Звання', " +
+                                       " managers_collectives.fullName AS 'ПІБ керівника' " +
+                                       " FROM(donetsk_culture.collectives LEFT JOIN donetsk_culture.managers_collectives ON collectives.id_manager = managers_collectives.id_manager); ";
 
             List<string> result = controlCommand.ExecuteReaderOneGetString(query);
             interactingWithForms.FillComboBox(result, managerComboBox);
@@ -196,5 +206,123 @@ namespace DonetskCulture.Tables
 
         #endregion
 
+        #region Перемещение по таблице
+        private void firstRecordButton_Click(object sender, EventArgs e)
+        {
+            bindingManagerBase.Position = 0;
+        }
+
+        private void previousRecordButton_Click(object sender, EventArgs e)
+        {
+            bindingManagerBase.Position -= 1;
+        }
+
+        private void nextRecordButton_Click(object sender, EventArgs e)
+        {
+            bindingManagerBase.Position += 1;
+        }
+
+        private void lastRecordButton_Click(object sender, EventArgs e)
+        {
+            bindingManagerBase.Position = bindingManagerBase.Count;
+        }
+
+
+        #endregion
+
+
+        //Группирирование 
+        private void GroupByNameDGVCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //Исправить ВАЖНО
+            try
+            {
+                if (!GroupByNameDGVCheckBox.Checked)
+                {
+                    string query = " SELECT   establishments.id_establishment AS 'ID',     " +
+                                    " establishments.name AS 'Назва закладу',               " +
+                                    " establishments.regionOrCity AS 'Район/Місто',         " +
+                                    " establishments.address AS 'Адреса',                   " +
+                                    " establishments.formWork AS 'Форма роботи',            " +
+                                    " establishments.state AS 'Стан',                       " +
+                                    " collectives.name AS 'Назва колективу',                " +
+                                    " heads_establishments.fullName AS 'Керівник закладу'   " +
+                                    " FROM((donetsk_culture.establishments                  " +
+                                    " LEFT JOIN donetsk_culture.collectives ON establishments.id_collective = collectives.id_collective) " +
+                                    " LEFT JOIN donetsk_culture.heads_establishments ON establishments.id_head = heads_establishments.id_head);";
+                    table = controlCommand.FillDataGridView(dataGridView1, query);
+                    dataGridView1.Columns[6].Visible = true;
+                    dataGridView1.Columns[7].Visible = true;
+                    bindingManagerBase = this.BindingContext[table];
+                }
+                else
+                {
+
+                    //dataGridView1.Update();
+                    //dataGridView1.Refresh();
+                    table = controlCommand.FillDataGridView(dataGridView1, otherQuery);
+                    dataGridView1.Columns[6].Visible = false;
+                    dataGridView1.Columns[7].Visible = false;
+                    bindingManagerBase = this.BindingContext[table];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n викликаний методом GroupByNameDGVCheckBox_CheckedChanged");
+            }
+        }
+
+
+        #region Реализация поиска в таблице
+
+        //Для поиска с группировкой
+        private void DoSearchWithGroup()
+        {
+
+            string query = partSelectSearchQueryWithGroup + " lower('%" + SearchTextBox.Text.ToString() + "%') group by name;";
+            table = controlCommand.FillDataGridView(dataGridView1, query);
+            bindingManagerBase = this.BindingContext[table];
+        }
+
+        private void DoSearch()
+        {
+            string query = partSelectSearchQuery + " lower('%" + SearchTextBox.Text.ToString() + "%');";
+            table = controlCommand.FillDataGridView(dataGridView1, query);
+            bindingManagerBase = this.BindingContext[table];
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (GroupByNameDGVCheckBox.Checked)
+            {
+                DoSearchWithGroup();
+                //dataGridView1.Columns[6].Visible = false;
+                //dataGridView1.Columns[7].Visible = false;
+            }
+            else
+            {
+                DoSearch();
+                //dataGridView1.Columns[6].Visible = true;
+                //dataGridView1.Columns[7].Visible = true;
+            }
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (GroupByNameDGVCheckBox.Checked)
+            {
+                DoSearchWithGroup();
+                //dataGridView1.Columns[6].Visible = false;
+                //dataGridView1.Columns[7].Visible = false;
+            }
+            else
+            {
+                DoSearch();
+                //dataGridView1.Columns[6].Visible = true;
+                //dataGridView1.Columns[7].Visible = true;
+            }
+        }
+
+        #endregion
     }
 }

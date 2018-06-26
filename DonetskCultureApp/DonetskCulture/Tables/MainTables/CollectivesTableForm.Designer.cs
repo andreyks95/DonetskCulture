@@ -72,10 +72,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(492, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(347, 123);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(522, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(517, 358);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
@@ -101,7 +105,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 496);
+            this.panel1.Size = new System.Drawing.Size(347, 481);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -114,7 +118,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(347, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(696, 123);
+            this.panel2.Size = new System.Drawing.Size(517, 123);
             this.panel2.TabIndex = 2;
             // 
             // HintInputFormLabel
@@ -146,16 +150,18 @@
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(249, 20);
             this.SearchTextBox.TabIndex = 15;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(352, 6);
+            this.SearchButton.Location = new System.Drawing.Point(352, 7);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 14;
             this.SearchButton.Text = "Знайти";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Visible = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // NavigateGroupBox
             // 
@@ -183,6 +189,7 @@
             this.lastRecordButton.Size = new System.Drawing.Size(30, 30);
             this.lastRecordButton.TabIndex = 20;
             this.lastRecordButton.UseVisualStyleBackColor = true;
+            this.lastRecordButton.Click += new System.EventHandler(this.lastRecordButton_Click);
             // 
             // nextRecordButton
             // 
@@ -195,6 +202,7 @@
             this.nextRecordButton.Size = new System.Drawing.Size(30, 30);
             this.nextRecordButton.TabIndex = 19;
             this.nextRecordButton.UseVisualStyleBackColor = true;
+            this.nextRecordButton.Click += new System.EventHandler(this.nextRecordButton_Click);
             // 
             // firstRecordButton
             // 
@@ -207,6 +215,7 @@
             this.firstRecordButton.Size = new System.Drawing.Size(30, 30);
             this.firstRecordButton.TabIndex = 17;
             this.firstRecordButton.UseVisualStyleBackColor = true;
+            this.firstRecordButton.Click += new System.EventHandler(this.firstRecordButton_Click);
             // 
             // previousRecordButton
             // 
@@ -219,6 +228,7 @@
             this.previousRecordButton.Size = new System.Drawing.Size(30, 30);
             this.previousRecordButton.TabIndex = 18;
             this.previousRecordButton.UseVisualStyleBackColor = true;
+            this.previousRecordButton.Click += new System.EventHandler(this.previousRecordButton_Click);
             // 
             // groupBox1
             // 
@@ -421,12 +431,13 @@
             this.GroupByNameDGVCheckBox.TabIndex = 36;
             this.GroupByNameDGVCheckBox.Text = "Згрупувати по назві закладу";
             this.GroupByNameDGVCheckBox.UseVisualStyleBackColor = false;
+            this.GroupByNameDGVCheckBox.CheckedChanged += new System.EventHandler(this.GroupByNameDGVCheckBox_CheckedChanged);
             // 
             // CollectivesTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 496);
+            this.ClientSize = new System.Drawing.Size(864, 481);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
