@@ -142,9 +142,7 @@ namespace DonetskCulture
             GetDataDataGrid();
         }
 
-
         //Users Generated Methods
-
 
         private string[] GetValuesFromForm()
         {
@@ -298,10 +296,6 @@ namespace DonetskCulture
         }
 
         #endregion
-
-
-
-
 
         //Заполняем существующий комбобокс колективами
         private void collectiveOfEstablishmentComboBox_Enter(object sender, EventArgs e)
