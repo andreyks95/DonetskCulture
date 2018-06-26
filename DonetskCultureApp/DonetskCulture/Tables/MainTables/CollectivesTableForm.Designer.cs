@@ -41,8 +41,6 @@
             this.nextRecordButton = new System.Windows.Forms.Button();
             this.firstRecordButton = new System.Windows.Forms.Button();
             this.previousRecordButton = new System.Windows.Forms.Button();
-            this.IDTextBox = new System.Windows.Forms.TextBox();
-            this.IDLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.id_managerLabel = new System.Windows.Forms.Label();
             this.managerComboBox = new System.Windows.Forms.ComboBox();
@@ -56,7 +54,7 @@
             this.formLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.InsertButton = new System.Windows.Forms.Button();
@@ -95,15 +93,13 @@
             this.panel1.Controls.Add(this.formLabel);
             this.panel1.Controls.Add(this.nameTextBox);
             this.panel1.Controls.Add(this.nameLabel);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.IDLabel);
             this.panel1.Controls.Add(this.IDTextBox);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.HintInputFormLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 636);
+            this.panel1.Size = new System.Drawing.Size(347, 496);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -114,9 +110,9 @@
             this.panel2.Controls.Add(this.SearchTextBox);
             this.panel2.Controls.Add(this.SearchButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(375, 0);
+            this.panel2.Location = new System.Drawing.Point(347, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 123);
+            this.panel2.Size = new System.Drawing.Size(696, 123);
             this.panel2.TabIndex = 2;
             // 
             // HintInputFormLabel
@@ -124,11 +120,11 @@
             this.HintInputFormLabel.AutoSize = true;
             this.HintInputFormLabel.BackColor = System.Drawing.Color.Transparent;
             this.HintInputFormLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HintInputFormLabel.Location = new System.Drawing.Point(12, 9);
+            this.HintInputFormLabel.Location = new System.Drawing.Point(18, 12);
             this.HintInputFormLabel.Name = "HintInputFormLabel";
-            this.HintInputFormLabel.Size = new System.Drawing.Size(216, 32);
+            this.HintInputFormLabel.Size = new System.Drawing.Size(307, 16);
             this.HintInputFormLabel.TabIndex = 17;
-            this.HintInputFormLabel.Text = "Уведення даних до таблиці \r\n\"Колективи\"";
+            this.HintInputFormLabel.Text = "Уведення даних до таблиці \"Колективи\"";
             this.HintInputFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SearchLabel
@@ -151,12 +147,13 @@
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(359, 9);
+            this.SearchButton.Location = new System.Drawing.Point(352, 6);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 14;
             this.SearchButton.Text = "Знайти";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Visible = false;
             // 
             // NavigateGroupBox
             // 
@@ -221,29 +218,13 @@
             this.previousRecordButton.TabIndex = 18;
             this.previousRecordButton.UseVisualStyleBackColor = true;
             // 
-            // IDTextBox
-            // 
-            this.IDTextBox.Location = new System.Drawing.Point(130, 59);
-            this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(198, 20);
-            this.IDTextBox.TabIndex = 19;
-            // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(12, 59);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(73, 13);
-            this.IDLabel.TabIndex = 20;
-            this.IDLabel.Text = "ID колективу";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.id_managerLabel);
             this.groupBox1.Controls.Add(this.managerComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(8, 330);
+            this.groupBox1.Location = new System.Drawing.Point(7, 297);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 65);
+            this.groupBox1.Size = new System.Drawing.Size(329, 65);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Закріпити за цим колективом";
@@ -262,7 +243,7 @@
             this.managerComboBox.FormattingEnabled = true;
             this.managerComboBox.Location = new System.Drawing.Point(114, 30);
             this.managerComboBox.Name = "managerComboBox";
-            this.managerComboBox.Size = new System.Drawing.Size(180, 21);
+            this.managerComboBox.Size = new System.Drawing.Size(200, 21);
             this.managerComboBox.TabIndex = 13;
             // 
             // rankComboBox
@@ -271,9 +252,9 @@
             this.rankComboBox.Items.AddRange(new object[] {
             "Зразковий",
             "Народний"});
-            this.rankComboBox.Location = new System.Drawing.Point(122, 294);
+            this.rankComboBox.Location = new System.Drawing.Point(121, 261);
             this.rankComboBox.Name = "rankComboBox";
-            this.rankComboBox.Size = new System.Drawing.Size(180, 21);
+            this.rankComboBox.Size = new System.Drawing.Size(200, 21);
             this.rankComboBox.TabIndex = 32;
             // 
             // ageCategoryComboBox
@@ -285,15 +266,15 @@
             "Молодіжна",
             "Дорослі",
             "Змішана"});
-            this.ageCategoryComboBox.Location = new System.Drawing.Point(122, 252);
+            this.ageCategoryComboBox.Location = new System.Drawing.Point(121, 219);
             this.ageCategoryComboBox.Name = "ageCategoryComboBox";
-            this.ageCategoryComboBox.Size = new System.Drawing.Size(180, 21);
+            this.ageCategoryComboBox.Size = new System.Drawing.Size(200, 21);
             this.ageCategoryComboBox.TabIndex = 31;
             // 
             // rankLabel
             // 
             this.rankLabel.AutoSize = true;
-            this.rankLabel.Location = new System.Drawing.Point(16, 294);
+            this.rankLabel.Location = new System.Drawing.Point(15, 261);
             this.rankLabel.Name = "rankLabel";
             this.rankLabel.Size = new System.Drawing.Size(44, 13);
             this.rankLabel.TabIndex = 30;
@@ -302,7 +283,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 255);
+            this.label5.Location = new System.Drawing.Point(15, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 29;
@@ -310,15 +291,15 @@
             // 
             // genreTextBox
             // 
-            this.genreTextBox.Location = new System.Drawing.Point(122, 212);
+            this.genreTextBox.Location = new System.Drawing.Point(121, 179);
             this.genreTextBox.Name = "genreTextBox";
-            this.genreTextBox.Size = new System.Drawing.Size(180, 20);
+            this.genreTextBox.Size = new System.Drawing.Size(200, 20);
             this.genreTextBox.TabIndex = 28;
             // 
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(16, 215);
+            this.genreLabel.Location = new System.Drawing.Point(15, 182);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(36, 13);
             this.genreLabel.TabIndex = 27;
@@ -326,15 +307,15 @@
             // 
             // formTextBox
             // 
-            this.formTextBox.Location = new System.Drawing.Point(122, 171);
+            this.formTextBox.Location = new System.Drawing.Point(121, 138);
             this.formTextBox.Name = "formTextBox";
-            this.formTextBox.Size = new System.Drawing.Size(180, 20);
+            this.formTextBox.Size = new System.Drawing.Size(200, 20);
             this.formTextBox.TabIndex = 26;
             // 
             // formLabel
             // 
             this.formLabel.AutoSize = true;
-            this.formLabel.Location = new System.Drawing.Point(16, 174);
+            this.formLabel.Location = new System.Drawing.Point(15, 141);
             this.formLabel.Name = "formLabel";
             this.formLabel.Size = new System.Drawing.Size(44, 13);
             this.formLabel.TabIndex = 25;
@@ -342,31 +323,31 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(122, 132);
+            this.nameTextBox.Location = new System.Drawing.Point(121, 99);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(180, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(200, 20);
             this.nameTextBox.TabIndex = 24;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(16, 135);
+            this.nameLabel.Location = new System.Drawing.Point(15, 102);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(94, 13);
             this.nameLabel.TabIndex = 23;
             this.nameLabel.Text = "Назва колективу";
             // 
-            // textBox1
+            // IDTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 22;
+            this.IDTextBox.Location = new System.Drawing.Point(121, 59);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.IDTextBox.TabIndex = 22;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 92);
+            this.label1.Location = new System.Drawing.Point(15, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 21;
@@ -378,9 +359,9 @@
             this.groupBox2.Controls.Add(this.InsertButton);
             this.groupBox2.Controls.Add(this.DeleteButton);
             this.groupBox2.Controls.Add(this.UpdateButton);
-            this.groupBox2.Location = new System.Drawing.Point(8, 411);
+            this.groupBox2.Location = new System.Drawing.Point(7, 378);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(341, 60);
+            this.groupBox2.Size = new System.Drawing.Size(329, 60);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Робота з записами";
@@ -414,12 +395,13 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(15, 489);
+            this.ClearButton.Location = new System.Drawing.Point(12, 444);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(107, 23);
             this.ClearButton.TabIndex = 35;
             this.ClearButton.Text = "Очистити форму";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // GroupByNameDGVCheckBox
             // 
@@ -438,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 636);
+            this.ClientSize = new System.Drawing.Size(1043, 496);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -471,8 +453,6 @@
         private System.Windows.Forms.Button nextRecordButton;
         private System.Windows.Forms.Button firstRecordButton;
         private System.Windows.Forms.Button previousRecordButton;
-        private System.Windows.Forms.TextBox IDTextBox;
-        private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label id_managerLabel;
         private System.Windows.Forms.ComboBox managerComboBox;
@@ -486,7 +466,7 @@
         private System.Windows.Forms.Label formLabel;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button InsertButton;
