@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.EstablishmentsButton = new System.Windows.Forms.Button();
+            this.ManagersOfCollectivesButton = new System.Windows.Forms.Button();
             this.CollectivesButton = new System.Windows.Forms.Button();
             this.HeadsOfEstablishmentsButton = new System.Windows.Forms.Button();
-            this.ManagersOfCollectivesButton = new System.Windows.Forms.Button();
+            this.EstablishmentsButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,15 +49,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Таблиці";
             // 
-            // EstablishmentsButton
+            // ManagersOfCollectivesButton
             // 
-            this.EstablishmentsButton.Location = new System.Drawing.Point(29, 30);
-            this.EstablishmentsButton.Name = "EstablishmentsButton";
-            this.EstablishmentsButton.Size = new System.Drawing.Size(133, 23);
-            this.EstablishmentsButton.TabIndex = 0;
-            this.EstablishmentsButton.Text = "Заклади культури";
-            this.EstablishmentsButton.UseVisualStyleBackColor = true;
-            this.EstablishmentsButton.Click += new System.EventHandler(this.EstablishmentsButton_Click);
+            this.ManagersOfCollectivesButton.Location = new System.Drawing.Point(29, 164);
+            this.ManagersOfCollectivesButton.Name = "ManagersOfCollectivesButton";
+            this.ManagersOfCollectivesButton.Size = new System.Drawing.Size(133, 23);
+            this.ManagersOfCollectivesButton.TabIndex = 3;
+            this.ManagersOfCollectivesButton.Text = "Керівники колективів";
+            this.ManagersOfCollectivesButton.UseVisualStyleBackColor = true;
             // 
             // CollectivesButton
             // 
@@ -67,6 +66,7 @@
             this.CollectivesButton.TabIndex = 1;
             this.CollectivesButton.Text = "Колективи";
             this.CollectivesButton.UseVisualStyleBackColor = true;
+            this.CollectivesButton.Click += new System.EventHandler(this.CollectivesButton_Click);
             // 
             // HeadsOfEstablishmentsButton
             // 
@@ -77,14 +77,15 @@
             this.HeadsOfEstablishmentsButton.Text = "Керівники закладів культури\r\n(адміністративний корпус)";
             this.HeadsOfEstablishmentsButton.UseVisualStyleBackColor = true;
             // 
-            // ManagersOfCollectivesButton
+            // EstablishmentsButton
             // 
-            this.ManagersOfCollectivesButton.Location = new System.Drawing.Point(29, 164);
-            this.ManagersOfCollectivesButton.Name = "ManagersOfCollectivesButton";
-            this.ManagersOfCollectivesButton.Size = new System.Drawing.Size(133, 23);
-            this.ManagersOfCollectivesButton.TabIndex = 3;
-            this.ManagersOfCollectivesButton.Text = "Керівники колективів";
-            this.ManagersOfCollectivesButton.UseVisualStyleBackColor = true;
+            this.EstablishmentsButton.Location = new System.Drawing.Point(29, 30);
+            this.EstablishmentsButton.Name = "EstablishmentsButton";
+            this.EstablishmentsButton.Size = new System.Drawing.Size(133, 23);
+            this.EstablishmentsButton.TabIndex = 0;
+            this.EstablishmentsButton.Text = "Заклади культури";
+            this.EstablishmentsButton.UseVisualStyleBackColor = true;
+            this.EstablishmentsButton.Click += new System.EventHandler(this.EstablishmentsButton_Click);
             // 
             // ControlForm
             // 

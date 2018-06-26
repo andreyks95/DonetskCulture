@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DonetskCulture.Tables;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,12 @@ namespace DonetskCulture
         {
             EstablishmentsTableForm establishmentsTableForm = new EstablishmentsTableForm(sqlConnection);
             establishmentsTableForm.Show();
+        }
+
+        private void CollectivesButton_Click(object sender, EventArgs e)
+        {
+            CollectivesTableForm collectivesTableForm = new CollectivesTableForm();
+            collectivesTableForm.Show();
         }
     }
 }
