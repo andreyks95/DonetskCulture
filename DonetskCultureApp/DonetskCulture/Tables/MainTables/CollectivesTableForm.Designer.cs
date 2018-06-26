@@ -77,6 +77,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(522, 262);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // panel1
             // 
@@ -245,6 +247,7 @@
             this.managerComboBox.Name = "managerComboBox";
             this.managerComboBox.Size = new System.Drawing.Size(200, 21);
             this.managerComboBox.TabIndex = 13;
+            this.managerComboBox.Enter += new System.EventHandler(this.managerComboBox_Enter);
             // 
             // rankComboBox
             // 
@@ -374,6 +377,7 @@
             this.InsertButton.TabIndex = 14;
             this.InsertButton.Text = "Вставити";
             this.InsertButton.UseVisualStyleBackColor = true;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // DeleteButton
             // 
@@ -383,6 +387,7 @@
             this.DeleteButton.TabIndex = 16;
             this.DeleteButton.Text = "Видалити";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UpdateButton
             // 
@@ -392,6 +397,7 @@
             this.UpdateButton.TabIndex = 15;
             this.UpdateButton.Text = "Оновити";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // ClearButton
             // 
