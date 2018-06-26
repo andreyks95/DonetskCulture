@@ -62,12 +62,15 @@
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ShowManager_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.NavigateGroupBox.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -311,6 +314,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Controls.Add(this.GroupByNameDGVCheckBox);
             this.panel2.Controls.Add(this.NavigateGroupBox);
             this.panel2.Controls.Add(this.SearchLabel);
@@ -432,6 +436,28 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.ShowManager_Button);
+            this.groupBox3.Font = new System.Drawing.Font("Verdana", 9.5F);
+            this.groupBox3.Location = new System.Drawing.Point(170, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(257, 57);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Відобразити для цього колективу";
+            // 
+            // ShowManager_Button
+            // 
+            this.ShowManager_Button.Location = new System.Drawing.Point(15, 20);
+            this.ShowManager_Button.Name = "ShowManager_Button";
+            this.ShowManager_Button.Size = new System.Drawing.Size(118, 30);
+            this.ShowManager_Button.TabIndex = 1;
+            this.ShowManager_Button.Text = "Керівників";
+            this.ShowManager_Button.UseVisualStyleBackColor = true;
+            this.ShowManager_Button.Click += new System.EventHandler(this.ShowManager_Button_Click);
+            // 
             // CollectivesTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +479,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.NavigateGroupBox.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +519,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.CheckBox GroupByNameDGVCheckBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button ShowManager_Button;
     }
 }

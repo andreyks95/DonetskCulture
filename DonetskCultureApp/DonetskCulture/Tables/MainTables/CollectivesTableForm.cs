@@ -287,13 +287,11 @@ namespace DonetskCulture.Tables
             {
                 DoSearchWithGroup();
                 //dataGridView1.Columns[6].Visible = false;
-                //dataGridView1.Columns[7].Visible = false;
             }
             else
             {
                 DoSearch();
                 //dataGridView1.Columns[6].Visible = true;
-                //dataGridView1.Columns[7].Visible = true;
             }
         }
 
@@ -303,16 +301,29 @@ namespace DonetskCulture.Tables
             {
                 DoSearchWithGroup();
                 //dataGridView1.Columns[6].Visible = false;
-                //dataGridView1.Columns[7].Visible = false;
             }
             else
             {
                 DoSearch();
                 //dataGridView1.Columns[6].Visible = true;
-                //dataGridView1.Columns[7].Visible = true;
             }
         }
 
         #endregion
+
+        private void ShowManager_Button_Click(object sender, EventArgs e)
+        {
+            string valueNameCollectiveColumn = dataGridView1.CurrentRow.Cells[1].Value?.ToString();
+
+            if (!String.IsNullOrEmpty(valueNameCollectiveColumn) && !String.IsNullOrWhiteSpace(valueNameCollectiveColumn))
+            {
+                SelectManagersOfCollectiveTableForm selectManagersOfCollectiveTableForm = new SelectManagersOfCollectiveTableForm(valueNameCollectiveColumn);
+                selectManagersOfCollectiveTableForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Увага!!! \n Виберіть колектив в таблиці! ");
+            }
+        }
     }
 }
