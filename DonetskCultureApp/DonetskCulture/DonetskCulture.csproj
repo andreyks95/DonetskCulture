@@ -94,6 +94,12 @@
     <Compile Include="Tables\AddRecordsTables\AddManagerCollectiveForm.Designer.cs">
       <DependentUpon>AddManagerCollectiveForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tables\MainTables\ManagersCollectivesTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\MainTables\ManagersCollectivesTableForm.Designer.cs">
+      <DependentUpon>ManagersCollectivesTableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tables\SupportTables\SelectCollectivesOfEstablishmentsTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tables\MainTables\ManagersCollectivesTableForm.resx">
+      <DependentUpon>ManagersCollectivesTableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tables\SupportTables\SelectCollectivesOfEstablishmentsTableForm.resx">
       <DependentUpon>SelectCollectivesOfEstablishmentsTableForm.cs</DependentUpon>
     </EmbeddedResource>
