@@ -138,10 +138,12 @@ namespace DonetskCulture.Tables
         //Заполняем ComboBox для отображения руководителей
         private void managerComboBox_Enter(object sender, EventArgs e)
         {
-            string query = " SELECT collectives.id_collective AS 'ID колективу', collectives.name AS 'Назва', collectives.form AS 'Форма', " +
-                                       " collectives.genre AS 'Жанр', collectives.ageCategory AS 'Вікова категорія', collectives.rank AS 'Звання', " +
-                                       " managers_collectives.fullName AS 'ПІБ керівника' " +
-                                       " FROM(donetsk_culture.collectives LEFT JOIN donetsk_culture.managers_collectives ON collectives.id_manager = managers_collectives.id_manager); ";
+            string query = " SELECT CONCAT(COALESCE(managers_collectives.id_manager, ''), ' ', COALESCE(managers_collectives.fullName, ''), ' ', " +
+                            " COALESCE(managers_collectives.rankManager, ''), ' ', COALESCE(managers_collectives.education, ''), ' ', " +
+                            " COALESCE(managers_collectives.experience, ''), ' ', COALESCE(managers_collectives.phone, ''), ' ', " +
+                            " COALESCE(managers_collectives.email, ''), ' ') AS 'Result' " +
+                            " From donetsk_culture.managers_collectives; ";
+
 
             List<string> result = controlCommand.ExecuteReaderOneGetString(query);
             interactingWithForms.FillComboBox(result, managerComboBox);
@@ -234,35 +236,23 @@ namespace DonetskCulture.Tables
         //Группирирование 
         private void GroupByNameDGVCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            //Исправить ВАЖНО
             try
             {
                 if (!GroupByNameDGVCheckBox.Checked)
                 {
-                    string query = " SELECT   establishments.id_establishment AS 'ID',     " +
-                                    " establishments.name AS 'Назва закладу',               " +
-                                    " establishments.regionOrCity AS 'Район/Місто',         " +
-                                    " establishments.address AS 'Адреса',                   " +
-                                    " establishments.formWork AS 'Форма роботи',            " +
-                                    " establishments.state AS 'Стан',                       " +
-                                    " collectives.name AS 'Назва колективу',                " +
-                                    " heads_establishments.fullName AS 'Керівник закладу'   " +
-                                    " FROM((donetsk_culture.establishments                  " +
-                                    " LEFT JOIN donetsk_culture.collectives ON establishments.id_collective = collectives.id_collective) " +
-                                    " LEFT JOIN donetsk_culture.heads_establishments ON establishments.id_head = heads_establishments.id_head);";
+                    string query =     " SELECT collectives.id_collective AS 'ID колективу', collectives.name AS 'Назва', collectives.form AS 'Форма', " +
+                                       " collectives.genre AS 'Жанр', collectives.ageCategory AS 'Вікова категорія', collectives.rank AS 'Звання', " +
+                                       " managers_collectives.fullName AS 'ПІБ керівника' " +
+                                       " FROM(donetsk_culture.collectives LEFT JOIN donetsk_culture.managers_collectives ON collectives.id_manager = managers_collectives.id_manager); ";
+
                     table = controlCommand.FillDataGridView(dataGridView1, query);
                     dataGridView1.Columns[6].Visible = true;
-                    dataGridView1.Columns[7].Visible = true;
                     bindingManagerBase = this.BindingContext[table];
                 }
                 else
                 {
-
-                    //dataGridView1.Update();
-                    //dataGridView1.Refresh();
                     table = controlCommand.FillDataGridView(dataGridView1, otherQuery);
                     dataGridView1.Columns[6].Visible = false;
-                    dataGridView1.Columns[7].Visible = false;
                     bindingManagerBase = this.BindingContext[table];
                 }
             }

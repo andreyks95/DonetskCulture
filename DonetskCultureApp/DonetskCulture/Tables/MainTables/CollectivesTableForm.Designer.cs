@@ -31,16 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectivesTableForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.HintInputFormLabel = new System.Windows.Forms.Label();
-            this.SearchLabel = new System.Windows.Forms.Label();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.NavigateGroupBox = new System.Windows.Forms.GroupBox();
-            this.lastRecordButton = new System.Windows.Forms.Button();
-            this.nextRecordButton = new System.Windows.Forms.Button();
-            this.firstRecordButton = new System.Windows.Forms.Button();
-            this.previousRecordButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.InsertButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.id_managerLabel = new System.Windows.Forms.Label();
             this.managerComboBox = new System.Windows.Forms.ComboBox();
@@ -56,18 +51,23 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.InsertButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.ClearButton = new System.Windows.Forms.Button();
+            this.HintInputFormLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.GroupByNameDGVCheckBox = new System.Windows.Forms.CheckBox();
+            this.NavigateGroupBox = new System.Windows.Forms.GroupBox();
+            this.lastRecordButton = new System.Windows.Forms.Button();
+            this.nextRecordButton = new System.Windows.Forms.Button();
+            this.firstRecordButton = new System.Windows.Forms.Button();
+            this.previousRecordButton = new System.Windows.Forms.Button();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.NavigateGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -108,127 +108,58 @@
             this.panel1.Size = new System.Drawing.Size(347, 481);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // ClearButton
             // 
-            this.panel2.Controls.Add(this.GroupByNameDGVCheckBox);
-            this.panel2.Controls.Add(this.NavigateGroupBox);
-            this.panel2.Controls.Add(this.SearchLabel);
-            this.panel2.Controls.Add(this.SearchTextBox);
-            this.panel2.Controls.Add(this.SearchButton);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(347, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(517, 123);
-            this.panel2.TabIndex = 2;
+            this.ClearButton.Location = new System.Drawing.Point(12, 444);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(107, 23);
+            this.ClearButton.TabIndex = 35;
+            this.ClearButton.Text = "Очистити форму";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // HintInputFormLabel
+            // groupBox2
             // 
-            this.HintInputFormLabel.AutoSize = true;
-            this.HintInputFormLabel.BackColor = System.Drawing.Color.Transparent;
-            this.HintInputFormLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HintInputFormLabel.Location = new System.Drawing.Point(18, 12);
-            this.HintInputFormLabel.Name = "HintInputFormLabel";
-            this.HintInputFormLabel.Size = new System.Drawing.Size(307, 16);
-            this.HintInputFormLabel.TabIndex = 17;
-            this.HintInputFormLabel.Text = "Уведення даних до таблиці \"Колективи\"";
-            this.HintInputFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.InsertButton);
+            this.groupBox2.Controls.Add(this.DeleteButton);
+            this.groupBox2.Controls.Add(this.UpdateButton);
+            this.groupBox2.Location = new System.Drawing.Point(7, 378);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(329, 60);
+            this.groupBox2.TabIndex = 34;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Робота з записами";
             // 
-            // SearchLabel
+            // InsertButton
             // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SearchLabel.Location = new System.Drawing.Point(9, 9);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(57, 16);
-            this.SearchLabel.TabIndex = 16;
-            this.SearchLabel.Text = "Пошук";
+            this.InsertButton.Location = new System.Drawing.Point(14, 24);
+            this.InsertButton.Name = "InsertButton";
+            this.InsertButton.Size = new System.Drawing.Size(92, 23);
+            this.InsertButton.TabIndex = 14;
+            this.InsertButton.Text = "Вставити";
+            this.InsertButton.UseVisualStyleBackColor = true;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
-            // SearchTextBox
+            // DeleteButton
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(87, 9);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(249, 20);
-            this.SearchTextBox.TabIndex = 15;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.DeleteButton.Location = new System.Drawing.Point(228, 24);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(92, 23);
+            this.DeleteButton.TabIndex = 16;
+            this.DeleteButton.Text = "Видалити";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
-            // SearchButton
+            // UpdateButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(352, 7);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
-            this.SearchButton.TabIndex = 14;
-            this.SearchButton.Text = "Знайти";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Visible = false;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // NavigateGroupBox
-            // 
-            this.NavigateGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.NavigateGroupBox.Controls.Add(this.lastRecordButton);
-            this.NavigateGroupBox.Controls.Add(this.nextRecordButton);
-            this.NavigateGroupBox.Controls.Add(this.firstRecordButton);
-            this.NavigateGroupBox.Controls.Add(this.previousRecordButton);
-            this.NavigateGroupBox.Font = new System.Drawing.Font("Verdana", 9.5F);
-            this.NavigateGroupBox.Location = new System.Drawing.Point(3, 35);
-            this.NavigateGroupBox.Name = "NavigateGroupBox";
-            this.NavigateGroupBox.Size = new System.Drawing.Size(161, 57);
-            this.NavigateGroupBox.TabIndex = 17;
-            this.NavigateGroupBox.TabStop = false;
-            this.NavigateGroupBox.Text = "Навігація по таблиці";
-            // 
-            // lastRecordButton
-            // 
-            this.lastRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lastRecordButton.BackgroundImage")));
-            this.lastRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lastRecordButton.Location = new System.Drawing.Point(117, 18);
-            this.lastRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
-            this.lastRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
-            this.lastRecordButton.Name = "lastRecordButton";
-            this.lastRecordButton.Size = new System.Drawing.Size(30, 30);
-            this.lastRecordButton.TabIndex = 20;
-            this.lastRecordButton.UseVisualStyleBackColor = true;
-            this.lastRecordButton.Click += new System.EventHandler(this.lastRecordButton_Click);
-            // 
-            // nextRecordButton
-            // 
-            this.nextRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextRecordButton.BackgroundImage")));
-            this.nextRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.nextRecordButton.Location = new System.Drawing.Point(81, 18);
-            this.nextRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
-            this.nextRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
-            this.nextRecordButton.Name = "nextRecordButton";
-            this.nextRecordButton.Size = new System.Drawing.Size(30, 30);
-            this.nextRecordButton.TabIndex = 19;
-            this.nextRecordButton.UseVisualStyleBackColor = true;
-            this.nextRecordButton.Click += new System.EventHandler(this.nextRecordButton_Click);
-            // 
-            // firstRecordButton
-            // 
-            this.firstRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("firstRecordButton.BackgroundImage")));
-            this.firstRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.firstRecordButton.Location = new System.Drawing.Point(6, 18);
-            this.firstRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
-            this.firstRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
-            this.firstRecordButton.Name = "firstRecordButton";
-            this.firstRecordButton.Size = new System.Drawing.Size(30, 30);
-            this.firstRecordButton.TabIndex = 17;
-            this.firstRecordButton.UseVisualStyleBackColor = true;
-            this.firstRecordButton.Click += new System.EventHandler(this.firstRecordButton_Click);
-            // 
-            // previousRecordButton
-            // 
-            this.previousRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("previousRecordButton.BackgroundImage")));
-            this.previousRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.previousRecordButton.Location = new System.Drawing.Point(43, 18);
-            this.previousRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
-            this.previousRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
-            this.previousRecordButton.Name = "previousRecordButton";
-            this.previousRecordButton.Size = new System.Drawing.Size(30, 30);
-            this.previousRecordButton.TabIndex = 18;
-            this.previousRecordButton.UseVisualStyleBackColor = true;
-            this.previousRecordButton.Click += new System.EventHandler(this.previousRecordButton_Click);
+            this.UpdateButton.Location = new System.Drawing.Point(127, 24);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(92, 23);
+            this.UpdateButton.TabIndex = 15;
+            this.UpdateButton.Text = "Оновити";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // groupBox1
             // 
@@ -366,58 +297,30 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "ID колективу";
             // 
-            // groupBox2
+            // HintInputFormLabel
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.InsertButton);
-            this.groupBox2.Controls.Add(this.DeleteButton);
-            this.groupBox2.Controls.Add(this.UpdateButton);
-            this.groupBox2.Location = new System.Drawing.Point(7, 378);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 60);
-            this.groupBox2.TabIndex = 34;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Робота з записами";
+            this.HintInputFormLabel.AutoSize = true;
+            this.HintInputFormLabel.BackColor = System.Drawing.Color.Transparent;
+            this.HintInputFormLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HintInputFormLabel.Location = new System.Drawing.Point(18, 12);
+            this.HintInputFormLabel.Name = "HintInputFormLabel";
+            this.HintInputFormLabel.Size = new System.Drawing.Size(307, 16);
+            this.HintInputFormLabel.TabIndex = 17;
+            this.HintInputFormLabel.Text = "Уведення даних до таблиці \"Колективи\"";
+            this.HintInputFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // InsertButton
+            // panel2
             // 
-            this.InsertButton.Location = new System.Drawing.Point(14, 24);
-            this.InsertButton.Name = "InsertButton";
-            this.InsertButton.Size = new System.Drawing.Size(92, 23);
-            this.InsertButton.TabIndex = 14;
-            this.InsertButton.Text = "Вставити";
-            this.InsertButton.UseVisualStyleBackColor = true;
-            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Location = new System.Drawing.Point(228, 24);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(92, 23);
-            this.DeleteButton.TabIndex = 16;
-            this.DeleteButton.Text = "Видалити";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // UpdateButton
-            // 
-            this.UpdateButton.Location = new System.Drawing.Point(127, 24);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(92, 23);
-            this.UpdateButton.TabIndex = 15;
-            this.UpdateButton.Text = "Оновити";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.Location = new System.Drawing.Point(12, 444);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(107, 23);
-            this.ClearButton.TabIndex = 35;
-            this.ClearButton.Text = "Очистити форму";
-            this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            this.panel2.Controls.Add(this.GroupByNameDGVCheckBox);
+            this.panel2.Controls.Add(this.NavigateGroupBox);
+            this.panel2.Controls.Add(this.SearchLabel);
+            this.panel2.Controls.Add(this.SearchTextBox);
+            this.panel2.Controls.Add(this.SearchButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(347, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(517, 123);
+            this.panel2.TabIndex = 2;
             // 
             // GroupByNameDGVCheckBox
             // 
@@ -433,6 +336,103 @@
             this.GroupByNameDGVCheckBox.UseVisualStyleBackColor = false;
             this.GroupByNameDGVCheckBox.CheckedChanged += new System.EventHandler(this.GroupByNameDGVCheckBox_CheckedChanged);
             // 
+            // NavigateGroupBox
+            // 
+            this.NavigateGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.NavigateGroupBox.Controls.Add(this.lastRecordButton);
+            this.NavigateGroupBox.Controls.Add(this.nextRecordButton);
+            this.NavigateGroupBox.Controls.Add(this.firstRecordButton);
+            this.NavigateGroupBox.Controls.Add(this.previousRecordButton);
+            this.NavigateGroupBox.Font = new System.Drawing.Font("Verdana", 9.5F);
+            this.NavigateGroupBox.Location = new System.Drawing.Point(3, 35);
+            this.NavigateGroupBox.Name = "NavigateGroupBox";
+            this.NavigateGroupBox.Size = new System.Drawing.Size(161, 57);
+            this.NavigateGroupBox.TabIndex = 17;
+            this.NavigateGroupBox.TabStop = false;
+            this.NavigateGroupBox.Text = "Навігація по таблиці";
+            // 
+            // lastRecordButton
+            // 
+            this.lastRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lastRecordButton.BackgroundImage")));
+            this.lastRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lastRecordButton.Location = new System.Drawing.Point(117, 18);
+            this.lastRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
+            this.lastRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
+            this.lastRecordButton.Name = "lastRecordButton";
+            this.lastRecordButton.Size = new System.Drawing.Size(30, 30);
+            this.lastRecordButton.TabIndex = 20;
+            this.lastRecordButton.UseVisualStyleBackColor = true;
+            this.lastRecordButton.Click += new System.EventHandler(this.lastRecordButton_Click);
+            // 
+            // nextRecordButton
+            // 
+            this.nextRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextRecordButton.BackgroundImage")));
+            this.nextRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nextRecordButton.Location = new System.Drawing.Point(81, 18);
+            this.nextRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
+            this.nextRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
+            this.nextRecordButton.Name = "nextRecordButton";
+            this.nextRecordButton.Size = new System.Drawing.Size(30, 30);
+            this.nextRecordButton.TabIndex = 19;
+            this.nextRecordButton.UseVisualStyleBackColor = true;
+            this.nextRecordButton.Click += new System.EventHandler(this.nextRecordButton_Click);
+            // 
+            // firstRecordButton
+            // 
+            this.firstRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("firstRecordButton.BackgroundImage")));
+            this.firstRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.firstRecordButton.Location = new System.Drawing.Point(6, 18);
+            this.firstRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
+            this.firstRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
+            this.firstRecordButton.Name = "firstRecordButton";
+            this.firstRecordButton.Size = new System.Drawing.Size(30, 30);
+            this.firstRecordButton.TabIndex = 17;
+            this.firstRecordButton.UseVisualStyleBackColor = true;
+            this.firstRecordButton.Click += new System.EventHandler(this.firstRecordButton_Click);
+            // 
+            // previousRecordButton
+            // 
+            this.previousRecordButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("previousRecordButton.BackgroundImage")));
+            this.previousRecordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.previousRecordButton.Location = new System.Drawing.Point(43, 18);
+            this.previousRecordButton.MaximumSize = new System.Drawing.Size(30, 30);
+            this.previousRecordButton.MinimumSize = new System.Drawing.Size(30, 30);
+            this.previousRecordButton.Name = "previousRecordButton";
+            this.previousRecordButton.Size = new System.Drawing.Size(30, 30);
+            this.previousRecordButton.TabIndex = 18;
+            this.previousRecordButton.UseVisualStyleBackColor = true;
+            this.previousRecordButton.Click += new System.EventHandler(this.previousRecordButton_Click);
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.BackColor = System.Drawing.Color.Transparent;
+            this.SearchLabel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchLabel.Location = new System.Drawing.Point(9, 9);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(57, 16);
+            this.SearchLabel.TabIndex = 16;
+            this.SearchLabel.Text = "Пошук";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(87, 9);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(249, 20);
+            this.SearchTextBox.TabIndex = 15;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(352, 7);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.TabIndex = 14;
+            this.SearchButton.Text = "Знайти";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Visible = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // CollectivesTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,18 +441,19 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(880, 520);
             this.Name = "CollectivesTableForm";
             this.Text = "CollectivesTableForm";
             this.Load += new System.EventHandler(this.CollectivesTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.NavigateGroupBox.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
