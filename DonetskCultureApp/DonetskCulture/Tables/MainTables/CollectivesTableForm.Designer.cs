@@ -426,6 +426,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "CollectivesTableForm";
             this.Text = "CollectivesTableForm";
+            this.Load += new System.EventHandler(this.CollectivesTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
