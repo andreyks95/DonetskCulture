@@ -516,7 +516,6 @@
             this.SearchButton.TabIndex = 0;
             this.SearchButton.Text = "Знайти";
             this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Visible = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // EstablishmentsTableForm
