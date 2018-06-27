@@ -53,6 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.HintInputFormLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ShowManager_Button = new System.Windows.Forms.Button();
             this.GroupByNameDGVCheckBox = new System.Windows.Forms.CheckBox();
             this.NavigateGroupBox = new System.Windows.Forms.GroupBox();
             this.lastRecordButton = new System.Windows.Forms.Button();
@@ -62,15 +64,13 @@
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ShowManager_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.NavigateGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.NavigateGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -326,6 +326,28 @@
             this.panel2.Size = new System.Drawing.Size(517, 123);
             this.panel2.TabIndex = 2;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.ShowManager_Button);
+            this.groupBox3.Font = new System.Drawing.Font("Verdana", 9.5F);
+            this.groupBox3.Location = new System.Drawing.Point(170, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(257, 57);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Відобразити для цього колективу";
+            // 
+            // ShowManager_Button
+            // 
+            this.ShowManager_Button.Location = new System.Drawing.Point(15, 20);
+            this.ShowManager_Button.Name = "ShowManager_Button";
+            this.ShowManager_Button.Size = new System.Drawing.Size(118, 30);
+            this.ShowManager_Button.TabIndex = 1;
+            this.ShowManager_Button.Text = "Керівників";
+            this.ShowManager_Button.UseVisualStyleBackColor = true;
+            this.ShowManager_Button.Click += new System.EventHandler(this.ShowManager_Button_Click);
+            // 
             // GroupByNameDGVCheckBox
             // 
             this.GroupByNameDGVCheckBox.AutoSize = true;
@@ -334,9 +356,9 @@
             this.GroupByNameDGVCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.GroupByNameDGVCheckBox.Location = new System.Drawing.Point(6, 98);
             this.GroupByNameDGVCheckBox.Name = "GroupByNameDGVCheckBox";
-            this.GroupByNameDGVCheckBox.Size = new System.Drawing.Size(171, 17);
+            this.GroupByNameDGVCheckBox.Size = new System.Drawing.Size(182, 17);
             this.GroupByNameDGVCheckBox.TabIndex = 36;
-            this.GroupByNameDGVCheckBox.Text = "Згрупувати по назві закладу";
+            this.GroupByNameDGVCheckBox.Text = "Згрупувати по назві колективу";
             this.GroupByNameDGVCheckBox.UseVisualStyleBackColor = false;
             this.GroupByNameDGVCheckBox.CheckedChanged += new System.EventHandler(this.GroupByNameDGVCheckBox_CheckedChanged);
             // 
@@ -436,28 +458,6 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.ShowManager_Button);
-            this.groupBox3.Font = new System.Drawing.Font("Verdana", 9.5F);
-            this.groupBox3.Location = new System.Drawing.Point(170, 36);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(257, 57);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Відобразити для цього колективу";
-            // 
-            // ShowManager_Button
-            // 
-            this.ShowManager_Button.Location = new System.Drawing.Point(15, 20);
-            this.ShowManager_Button.Name = "ShowManager_Button";
-            this.ShowManager_Button.Size = new System.Drawing.Size(118, 30);
-            this.ShowManager_Button.TabIndex = 1;
-            this.ShowManager_Button.Text = "Керівників";
-            this.ShowManager_Button.UseVisualStyleBackColor = true;
-            this.ShowManager_Button.Click += new System.EventHandler(this.ShowManager_Button_Click);
-            // 
             // CollectivesTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,8 +478,8 @@
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.NavigateGroupBox.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.NavigateGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
