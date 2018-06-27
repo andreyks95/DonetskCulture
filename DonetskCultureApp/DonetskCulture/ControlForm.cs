@@ -1,4 +1,5 @@
 ﻿using DonetskCulture.Tables;
+using DonetskCulture.Tables.MainTables;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,12 @@ namespace DonetskCulture
         {
             CollectivesTableForm collectivesTableForm = new CollectivesTableForm();
             collectivesTableForm.Show();
+        }
+
+        private void ManagersOfCollectivesButton_Click(object sender, EventArgs e)
+        {
+            ManagersCollectivesTableForm managersCollectivesTableForm = new ManagersCollectivesTableForm();
+            managersCollectivesTableForm.Show();
         }
     }
 }

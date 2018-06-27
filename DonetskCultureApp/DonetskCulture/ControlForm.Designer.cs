@@ -57,6 +57,7 @@
             this.ManagersOfCollectivesButton.TabIndex = 3;
             this.ManagersOfCollectivesButton.Text = "Керівники колективів";
             this.ManagersOfCollectivesButton.UseVisualStyleBackColor = true;
+            this.ManagersOfCollectivesButton.Click += new System.EventHandler(this.ManagersOfCollectivesButton_Click);
             // 
             // CollectivesButton
             // 
