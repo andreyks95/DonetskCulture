@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ManagersOfCollectivesButton = new System.Windows.Forms.Button();
             this.CollectivesButton = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.groupBox1.Controls.Add(this.CollectivesButton);
             this.groupBox1.Controls.Add(this.HeadsOfEstablishmentsButton);
             this.groupBox1.Controls.Add(this.EstablishmentsButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 47);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(202, 210);
             this.groupBox1.TabIndex = 0;
@@ -93,10 +94,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 285);
+            this.ClientSize = new System.Drawing.Size(229, 286);
             this.Controls.Add(this.groupBox1);
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(245, 325);
+            this.MinimumSize = new System.Drawing.Size(245, 325);
             this.Name = "ControlForm";
-            this.Text = "ControlForm";
+            this.Text = "Головна форма";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

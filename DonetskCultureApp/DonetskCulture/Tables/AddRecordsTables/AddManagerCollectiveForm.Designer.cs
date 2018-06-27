@@ -214,6 +214,7 @@
             this.MaximumSize = new System.Drawing.Size(320, 410);
             this.MinimumSize = new System.Drawing.Size(320, 410);
             this.Name = "AddManagerCollectiveForm";
+            this.ShowIcon = false;
             this.Text = "Додати керівника колективу";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -87,6 +87,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "SelectCollectivesOfEstablishmentsTableForm";
+            this.ShowIcon = false;
             this.Text = "Колективи обраного закладу культури";
             this.Load += new System.EventHandler(this.SelectCollectivesOfEstablishmentsTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

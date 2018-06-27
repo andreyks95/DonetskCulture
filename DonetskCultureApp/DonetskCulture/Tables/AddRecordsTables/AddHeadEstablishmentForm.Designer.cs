@@ -176,6 +176,7 @@
             this.MaximumSize = new System.Drawing.Size(330, 350);
             this.MinimumSize = new System.Drawing.Size(330, 350);
             this.Name = "AddHeadEstablishmentForm";
+            this.ShowIcon = false;
             this.Text = "Додати члена адмін. корпусу";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -75,6 +75,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "SelectManagersOfCollectiveTableForm";
+            this.ShowIcon = false;
             this.Text = "Керівники обраного колективу";
             this.Load += new System.EventHandler(this.SelectManagersOfCollectiveTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
