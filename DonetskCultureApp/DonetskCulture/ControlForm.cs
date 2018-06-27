@@ -44,5 +44,11 @@ namespace DonetskCulture
             ManagersCollectivesTableForm managersCollectivesTableForm = new ManagersCollectivesTableForm();
             managersCollectivesTableForm.Show();
         }
+
+        private void HeadsOfEstablishmentsButton_Click(object sender, EventArgs e)
+        {
+            HeadsEstablishmentsTableForm headsEstablishmentsTableForm = new HeadsEstablishmentsTableForm();
+            headsEstablishmentsTableForm.Show();
+        }
     }
 }

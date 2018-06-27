@@ -77,6 +77,7 @@
             this.HeadsOfEstablishmentsButton.TabIndex = 2;
             this.HeadsOfEstablishmentsButton.Text = "Керівники закладів культури\r\n(адміністративний корпус)";
             this.HeadsOfEstablishmentsButton.UseVisualStyleBackColor = true;
+            this.HeadsOfEstablishmentsButton.Click += new System.EventHandler(this.HeadsOfEstablishmentsButton_Click);
             // 
             // EstablishmentsButton
             // 
