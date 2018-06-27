@@ -93,7 +93,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.ClearButton);
             this.panel1.Controls.Add(this.groupBox3);
@@ -415,7 +414,6 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.GroupByNameDGVCheckBox);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.NavigateGroupBox);
@@ -528,7 +526,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(850, 670);
             this.Name = "EstablishmentsTableForm";
-            this.Text = "EstablishmentsTableForm";
+            this.Text = "Заклади культури";
             this.Load += new System.EventHandler(this.EstablishmentsTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -30,8 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AddCollectiveButton = new System.Windows.Forms.Button();
             this.ShowManagersOfCollectiveButton = new System.Windows.Forms.Button();
+            this.AddCollectiveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,16 +58,6 @@
             this.panel1.Size = new System.Drawing.Size(784, 85);
             this.panel1.TabIndex = 1;
             // 
-            // AddCollectiveButton
-            // 
-            this.AddCollectiveButton.Location = new System.Drawing.Point(22, 23);
-            this.AddCollectiveButton.Name = "AddCollectiveButton";
-            this.AddCollectiveButton.Size = new System.Drawing.Size(100, 43);
-            this.AddCollectiveButton.TabIndex = 0;
-            this.AddCollectiveButton.Text = "Добавити колектив";
-            this.AddCollectiveButton.UseVisualStyleBackColor = true;
-            this.AddCollectiveButton.Click += new System.EventHandler(this.AddCollectiveButton_Click);
-            // 
             // ShowManagersOfCollectiveButton
             // 
             this.ShowManagersOfCollectiveButton.Location = new System.Drawing.Point(145, 23);
@@ -78,6 +68,16 @@
             this.ShowManagersOfCollectiveButton.UseVisualStyleBackColor = true;
             this.ShowManagersOfCollectiveButton.Click += new System.EventHandler(this.ShowManagersOfCollectiveButton_Click);
             // 
+            // AddCollectiveButton
+            // 
+            this.AddCollectiveButton.Location = new System.Drawing.Point(22, 23);
+            this.AddCollectiveButton.Name = "AddCollectiveButton";
+            this.AddCollectiveButton.Size = new System.Drawing.Size(100, 43);
+            this.AddCollectiveButton.TabIndex = 0;
+            this.AddCollectiveButton.Text = "Добавити колектив";
+            this.AddCollectiveButton.UseVisualStyleBackColor = true;
+            this.AddCollectiveButton.Click += new System.EventHandler(this.AddCollectiveButton_Click);
+            // 
             // SelectCollectivesOfEstablishmentsTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,7 +87,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "SelectCollectivesOfEstablishmentsTableForm";
-            this.Text = "SelectCollectivesOfEstablishmentsTableForm";
+            this.Text = "Колективи обраного закладу культури";
             this.Load += new System.EventHandler(this.SelectCollectivesOfEstablishmentsTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

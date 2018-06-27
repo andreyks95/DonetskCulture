@@ -239,7 +239,7 @@
             this.MaximumSize = new System.Drawing.Size(330, 430);
             this.MinimumSize = new System.Drawing.Size(330, 430);
             this.Name = "AddCollectiveForm";
-            this.Text = "AddCollectiveForm";
+            this.Text = "Додати колектив";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

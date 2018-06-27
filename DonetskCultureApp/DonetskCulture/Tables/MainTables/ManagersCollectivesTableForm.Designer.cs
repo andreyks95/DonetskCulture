@@ -417,7 +417,7 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(920, 480);
             this.Name = "ManagersCollectivesTableForm";
-            this.Text = "ManagersCollectivesTableForm";
+            this.Text = "Керівники колективів";
             this.Load += new System.EventHandler(this.ManagersCollectivesTableForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

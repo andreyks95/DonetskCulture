@@ -374,7 +374,7 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(900, 430);
             this.Name = "HeadsEstablishmentsTableForm";
-            this.Text = "HeadsEstablishmentsTableForm";
+            this.Text = "Керівники закладів культури";
             this.Load += new System.EventHandler(this.HeadsEstablishmentsTableForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

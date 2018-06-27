@@ -468,7 +468,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(880, 520);
             this.Name = "CollectivesTableForm";
-            this.Text = "CollectivesTableForm";
+            this.Text = "Колективи";
             this.Load += new System.EventHandler(this.CollectivesTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
