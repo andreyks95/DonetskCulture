@@ -90,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 496);
+            this.panel1.Size = new System.Drawing.Size(334, 441);
             this.panel1.TabIndex = 0;
             // 
             // ClearButton
@@ -402,7 +402,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(334, 120);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(570, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(570, 321);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
@@ -411,11 +411,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 496);
+            this.ClientSize = new System.Drawing.Size(904, 441);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(920, 535);
+            this.MinimumSize = new System.Drawing.Size(920, 480);
             this.Name = "ManagersCollectivesTableForm";
             this.Text = "ManagersCollectivesTableForm";
             this.Load += new System.EventHandler(this.ManagersCollectivesTableForm_Load);
