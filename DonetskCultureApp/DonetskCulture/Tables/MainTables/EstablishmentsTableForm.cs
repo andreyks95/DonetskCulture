@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DonetskCulture.Control;
 using MySql.Data.MySqlClient;
+using DonetskCulture.Tables;
 
 namespace DonetskCulture
 {
@@ -141,9 +142,7 @@ namespace DonetskCulture
             GetDataDataGrid();
         }
 
-
         //Users Generated Methods
-
 
         private string[] GetValuesFromForm()
         {
@@ -161,9 +160,9 @@ namespace DonetskCulture
             string collective = collectiveOfEstablishmentComboBox.SelectedItem?.ToString();
             string heads = managerOfEstablishmentComboBox.SelectedItem?.ToString();
             if (!String.IsNullOrEmpty(collective) && !String.IsNullOrWhiteSpace(collective))
-                collective = ParseForGetID(collective);
+                collective = interactingWithForms.ParseForGetID(collective);
             if (!String.IsNullOrEmpty(heads) && !String.IsNullOrWhiteSpace(heads))
-                heads = ParseForGetID(heads);
+                heads = interactingWithForms.ParseForGetID(heads);
 
             //Полученные значения с формы
             return new string[] { idText, name, region, address, formWork, function, collective, heads };
@@ -298,21 +297,6 @@ namespace DonetskCulture
 
         #endregion
 
-        //Парсим строку для получения ид
-        private string ParseForGetID(string rawString)
-        {
-            string result = null;
-            foreach (char symbol in rawString)
-            {
-                if (char.IsDigit(symbol))
-                    result += symbol;
-                else break;
-            }
-            return result;
-        }
-
-
-
         //Заполняем существующий комбобокс колективами
         private void collectiveOfEstablishmentComboBox_Enter(object sender, EventArgs e)
         {
@@ -396,10 +380,25 @@ namespace DonetskCulture
 
         private void ShowHeads_Button_Click(object sender, EventArgs e)
         {
+            string valueNameEstablishmentColumn = dataGridView1.CurrentRow.Cells[1].Value?.ToString();
 
+            if (!String.IsNullOrEmpty(valueNameEstablishmentColumn) && !String.IsNullOrWhiteSpace(valueNameEstablishmentColumn))
+            {
+                SelectHeadsOfEstablishmentsTableForm selectedHeads = new SelectHeadsOfEstablishmentsTableForm(valueNameEstablishmentColumn);
+                selectedHeads.Show();
+            }
+            else
+            {
+                MessageBox.Show("Увага!!! \n Виберіть заклад культури в таблиці! ");
+            }
         }
 
         #endregion
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            interactingWithForms.ClearForm(new[] {formWorkComboBox, collectiveOfEstablishmentComboBox, managerOfEstablishmentComboBox }, 
+                new[] { IDTextBox, nameTextBox, regionOrCityTextBox, addressTextBox, });
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DonetskCulture.Control;
+using DonetskCulture.Tables.AddRecordsTables;
 
 namespace DonetskCulture.Tables
 {
@@ -53,7 +54,8 @@ namespace DonetskCulture.Tables
 
         private void AddManagerOfCollectiveButton_Click(object sender, EventArgs e)
         {
-
+            AddManagerCollectiveForm addManagerCollective = new AddManagerCollectiveForm(controlCommand);
+            addManagerCollective.Show();
         }
     }
 }

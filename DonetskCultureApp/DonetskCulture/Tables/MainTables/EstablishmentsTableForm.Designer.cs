@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstablishmentsTableForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,15 +86,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(347, 127);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 484);
+            this.dataGridView1.Size = new System.Drawing.Size(517, 504);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.ClearButton);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.HintInputFormLabel);
@@ -113,8 +114,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 611);
+            this.panel1.Size = new System.Drawing.Size(347, 631);
             this.panel1.TabIndex = 1;
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(12, 593);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(107, 23);
+            this.ClearButton.TabIndex = 22;
+            this.ClearButton.Text = "Очистити форму";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // groupBox3
             // 
@@ -403,7 +414,6 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.GroupByNameDGVCheckBox);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.NavigateGroupBox);
@@ -412,7 +422,7 @@
             this.panel2.Controls.Add(this.SearchButton);
             this.panel2.Location = new System.Drawing.Point(347, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(487, 127);
+            this.panel2.Size = new System.Drawing.Size(517, 127);
             this.panel2.TabIndex = 2;
             // 
             // GroupByNameDGVCheckBox
@@ -510,13 +520,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 611);
+            this.ClientSize = new System.Drawing.Size(864, 631);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.MinimumSize = new System.Drawing.Size(850, 650);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(850, 670);
             this.Name = "EstablishmentsTableForm";
-            this.Text = "EstablishmentsTableForm";
+            this.Text = "Заклади культури";
             this.Load += new System.EventHandler(this.EstablishmentsTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -572,6 +583,7 @@
         private System.Windows.Forms.Button ShowHeads_Button;
         private System.Windows.Forms.Button ShowCollectives_Button;
         private System.Windows.Forms.CheckBox GroupByNameDGVCheckBox;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
 

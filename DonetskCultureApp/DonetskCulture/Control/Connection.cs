@@ -9,7 +9,7 @@ using System.Data;
 
 namespace DonetskCulture
 {
-    static class Connection
+   public static class Connection
     {
         private static MySqlConnection connection; //соединение
 

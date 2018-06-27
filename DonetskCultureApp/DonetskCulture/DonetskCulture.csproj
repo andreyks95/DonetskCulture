@@ -11,6 +11,23 @@
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\MainPC\Desktop\Install Program\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +47,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mainIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8275BBF98A7B3528CAE364907874FE630BA1E9ED</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DonetskCulture_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -67,6 +99,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm.Designer.cs">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Command.cs" />
     <Compile Include="Control\Connection.cs" />
     <Compile Include="Control\InteractingWithForms.cs" />
@@ -75,6 +113,30 @@
     </Compile>
     <Compile Include="Tables\AddRecordsTables\AddCollectiveForm.Designer.cs">
       <DependentUpon>AddCollectiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.Designer.cs">
+      <DependentUpon>AddHeadEstablishmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddManagerCollectiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\AddRecordsTables\AddManagerCollectiveForm.Designer.cs">
+      <DependentUpon>AddManagerCollectiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\MainTables\HeadsEstablishmentsTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\MainTables\HeadsEstablishmentsTableForm.Designer.cs">
+      <DependentUpon>HeadsEstablishmentsTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tables\MainTables\ManagersCollectivesTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tables\MainTables\ManagersCollectivesTableForm.Designer.cs">
+      <DependentUpon>ManagersCollectivesTableForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tables\SupportTables\SelectCollectivesOfEstablishmentsTableForm.cs">
       <SubType>Form</SubType>
@@ -109,8 +171,17 @@
       <DependentUpon>SelectManagersOfCollectiveTableForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestFiles\TestEntity.cs" />
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tables\AddRecordsTables\AddCollectiveForm.resx">
       <DependentUpon>AddCollectiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\AddRecordsTables\AddHeadEstablishmentForm.resx">
+      <DependentUpon>AddHeadEstablishmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\AddRecordsTables\AddManagerCollectiveForm.resx">
+      <DependentUpon>AddManagerCollectiveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tables\MainTables\CollectivesTableForm.resx">
       <DependentUpon>CollectivesTableForm.cs</DependentUpon>
@@ -127,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tables\MainTables\HeadsEstablishmentsTableForm.resx">
+      <DependentUpon>HeadsEstablishmentsTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables\MainTables\ManagersCollectivesTableForm.resx">
+      <DependentUpon>ManagersCollectivesTableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tables\SupportTables\SelectCollectivesOfEstablishmentsTableForm.resx">
       <DependentUpon>SelectCollectivesOfEstablishmentsTableForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +213,7 @@
     <EmbeddedResource Include="Tables\SupportTables\SelectManagersOfCollectiveTableForm.resx">
       <DependentUpon>SelectManagersOfCollectiveTableForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DonetskCulture_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -164,7 +242,19 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="mainIcon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

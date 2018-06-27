@@ -12,7 +12,7 @@ namespace DonetskCulture.Control
     /// <summary>
     /// Класс предназначен для управления командами (обращение) к БД, вывод данных на экран 
     /// </summary>
-    class Command
+    public class Command
     {
         //Fields
         private MySqlCommand command;// = new MySqlCommand();
@@ -94,6 +94,7 @@ namespace DonetskCulture.Control
         private void AddParametersString(string[] variables, string[] values)
         {
             int i = 0;
+            command.Parameters.Clear();
             foreach (string val in values)
                 command.Parameters.AddWithValue(variables[i++], val);
         }

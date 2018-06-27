@@ -45,7 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.id_managerLabel = new System.Windows.Forms.Label();
             this.AddCollectiveButton = new System.Windows.Forms.Button();
-            this.ClearBbutton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,22 +203,24 @@
             this.AddCollectiveButton.TabIndex = 18;
             this.AddCollectiveButton.Text = "Вставити запис";
             this.AddCollectiveButton.UseVisualStyleBackColor = true;
+            this.AddCollectiveButton.Click += new System.EventHandler(this.AddCollectiveButton_Click);
             // 
-            // ClearBbutton
+            // ClearButton
             // 
-            this.ClearBbutton.Location = new System.Drawing.Point(118, 358);
-            this.ClearBbutton.Name = "ClearBbutton";
-            this.ClearBbutton.Size = new System.Drawing.Size(107, 23);
-            this.ClearBbutton.TabIndex = 19;
-            this.ClearBbutton.Text = "Очистити форму";
-            this.ClearBbutton.UseVisualStyleBackColor = true;
+            this.ClearButton.Location = new System.Drawing.Point(118, 358);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(107, 23);
+            this.ClearButton.TabIndex = 19;
+            this.ClearButton.Text = "Очистити форму";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // AddCollectiveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 391);
-            this.Controls.Add(this.ClearBbutton);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.AddCollectiveButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rankComboBox);
@@ -237,7 +239,8 @@
             this.MaximumSize = new System.Drawing.Size(330, 430);
             this.MinimumSize = new System.Drawing.Size(330, 430);
             this.Name = "AddCollectiveForm";
-            this.Text = "AddCollectiveForm";
+            this.ShowIcon = false;
+            this.Text = "Додати колектив";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -264,6 +267,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label id_managerLabel;
         private System.Windows.Forms.Button AddCollectiveButton;
-        private System.Windows.Forms.Button ClearBbutton;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
